@@ -169,7 +169,7 @@ nav ul.active {
 }
 
 #about {
-    background: url('file:///C:/Users/saadsindhi/Downloads/web-development.jpg') center/cover no-repeat fixed; /* Fixed background */
+    background: url('web-development.jpg') center/cover no-repeat fixed; /* Fixed background */
     color: #FFFFFF; /* White text for best contrast */
      padding: 150px 20px; /* Increased top padding */\\\\\a 
     text-align: center;
