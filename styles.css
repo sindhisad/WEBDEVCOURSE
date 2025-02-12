@@ -287,6 +287,22 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents left/right scrolling */
+}
+img, iframe, video, card {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers content properly */
+    padding: 0 15px; /* Prevents content from touching edges */
+}
+    
     .menu-toggle {
         display: flex;
     }
