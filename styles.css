@@ -169,18 +169,17 @@ nav ul.active {
 }
 
 #about {
-    background: url('web-development.jpg') center/cover no-repeat fixed; /* Fixed background */
+    background: url('file:///C:/Users/saadsindhi/Downloads/web-development.jpg') center/cover no-repeat fixed; /* Fixed background */
     color: #FFFFFF; /* White text for best contrast */
      padding: 150px 20px; /* Increased top padding */\\\\\a 
     text-align: center;
     position: relative;
     min-height: 100vh; /* Ensures full-screen height */
-  isplay: flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
+    z-index: -1;
 }
 
 #about::before {
