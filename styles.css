@@ -239,6 +239,19 @@ font-family: 'Poppins', sans-serif;
 
 
 @media (max-width: 768px) {
+   .hero-section {
+        height: 80vh; /* Slightly smaller height on mobile */
+    }
+
+    .hero-section h1 {
+        font-size: 24px; /* Reduce heading size */
+    }
+
+    .hero-section p {
+        font-size: 16px; /* Reduce paragraph size */
+    }
+}
+    
     .menu-toggle {
         display: flex;
     }
