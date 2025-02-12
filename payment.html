@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section class="payment-container">
+        <h2>Complete Your Payment</h2>
+        <p>Select your preferred payment method:</p>
+
+        <div class="payment-options">
+            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn phonepe">Pay via PhonePe</a>
+            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn googlepay">Pay via Google Pay</a>
+            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn paytm">Pay via Paytm</a>
+        </div>
+
+        <p>Or scan the QR code below:</p>
+        <button onclick="showQR()" class="reveal-qr-btn">Click to Reveal QR Code</button>
+
+        <div id="qr-container" class="hidden">
+            <img src="C:\Users\saadsindhi\Downloads\WEBDEVTEACH_QR_Code (1).png" alt="UPI QR Code" width="300" height="300">
+        </div>
+
+        <h3>Submit Your Transaction ID</h3>
+        <div id="ff-compose"></div>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0RSgkMg5cdUq3yP_6eu_1eUdxuskM76tJEhM83f7QyU9Miw/viewform?embedded=true" width="420" height="200"></iframe>
+
+    </section>
+
+    <script>
+        function showQR() {
+            document.getElementById('qr-container').classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>

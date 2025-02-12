@@ -1,0 +1,509 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;`
+    z-index: 1003;
+    height: 70px; /* Set a specific height */
+    line-height: 70px;
+}
+section:first-of-type {
+    margin-top: 120px; /* Adjust according to navbar height */
+}
+
+
+
+header.scrolled {
+    background: #0d47a1;
+    padding: 15px;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    background: #0d47a1;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Ensures menu is above other elements */
+}
+
+.menu-toggle {
+    z-index: 1002; /* Makes sure the button is always clickable */
+}
+
+nav ul.active {
+    display: flex;
+}
+
+/* Pricing Section */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 320px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+    font-size: 1.8em;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.pricing-card p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.pricing-card .price {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #1a73e8;
+    margin: 20px 0;
+}
+
+.pricing-card button {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.pricing-card button:hover {
+    background: #0d47a1;
+    transform: scale(1.05);
+}
+
+#about {
+    background: url('file:///C:/Users/saadsindhi/Downloads/web-development.jpg') center/cover no-repeat fixed; /* Fixed background */
+    color: #FFFFFF; /* White text for best contrast */
+     padding: 150px 20px; /* Increased top padding */\\\\\a 
+    text-align: center;
+    position: relative;
+    min-height: 100vh; /* Ensures full-screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+}
+
+#about h2 {
+  
+ text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+ font-family: 'Orbitron', sans-serif;
+  
+  font-size: 3em;
+ 
+   color: #00CFFD; /* Neon blue for a techy feel */
+    z-index: 2;
+
+    position: relative;
+
+}
+
+
+#about p {
+    
+ text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+font-family: 'Poppins', sans-serif;
+
+    font-size: 1.5em;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #D9B3FF; /* Light purple for a stylish effect */
+    position: relative;
+
+    z-index: 2;
+
+}
+
+#about h2, #about p {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+
+/* Responsive Design */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+   nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(13, 71, 161, 0.95); /* Dark blue with slight transparency */
+    position: fixed;
+    top: 70px; /* Below navbar */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10000; /* Ensures menu stays above all elements */
+}
+
+/* Show Menu When Active */
+nav ul.active {
+    display: flex;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 10001; /* Always above other elements */
+}
+
+/* Hamburger Button Bars */
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Menu Links */
+nav ul li {
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+/* Menu Link Styling */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+    transition: background 0.3s;
+}
+
+/* Hover Effect for Links */
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 10001; /* Ensures button is clickable */
+}
+
+    section {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 60px 10px;
+    }
+} 
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.1em;
+    margin-top: 20px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* WebDevAI Section Styling */
+#webdevai {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#webdevai h2 {
+    font-size: 2.5em;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+#webdevai p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 700px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styled Embedded Form */
+.custom-form {
+    width: 100%;
+    height: 800px;
+    border: none;
+    filter: brightness(0.95);
+    border-radius: 10px;
+}
+
+/* Hover & Focus Effects */
+.custom-form:hover {
+    filter: brightness(1);
+}
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(13, 71, 161, 0.1));
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+    }
+    .custom-form {
+        height: 600px;
+    }
+}
+/* Cybersecurity Section Styling */
+#cybersecurity {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#cybersecurity h2 {
+    font-size: 2.5em;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+#cybersecurity p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+.payment-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: auto;
+}
+
+h2 {
+    color: #333;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.pay-btn {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.phonepe {
+    background: #6A0DAD;
+}
+
+.googlepay {
+    background: #4285F4;
+}
+
+.paytm {
+    background: #002970;
+}
+
+.pay-btn:hover {
+    opacity: 0.8;
+}
+
+.reveal-qr-btn {
+    background: #FF6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+#qr-container {
+    display: none;
+    margin-top: 10px;
+}
+
+#qr-container.show {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.verify-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
