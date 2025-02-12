@@ -73,42 +73,6 @@ nav ul {
 nav ul.active {
     display: flex;
 }
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .navbar ul {
-        display: none; /* Hide links initially */
-        flex-direction: column;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        text-align: center;
-    }
-
-    .navbar ul.active {
-        display: flex; /* Show when active */
-    }
-
-    .navbar ul li {
-        padding: 15px;
-        width: 100%;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        padding: 10px;
-        background: none;
-        border: none;
-        color: white;
-    }
-}
 
 /* Pricing Section */
 .pricing-container {
@@ -239,19 +203,6 @@ font-family: 'Poppins', sans-serif;
 
 
 @media (max-width: 768px) {
-   .hero-section {
-        height: 80vh; /* Slightly smaller height on mobile */
-    }
-
-    .hero-section h1 {
-        font-size: 24px; /* Reduce heading size */
-    }
-
-    .hero-section p {
-        font-size: 16px; /* Reduce paragraph size */
-    }
-}
-    
     .menu-toggle {
         display: flex;
     }
@@ -555,39 +506,4 @@ input {
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-@media (max-width: 768px) {
-    .hero-section {
-        height: auto;
-        padding: 50px 20px;
-        text-align: center;
-    }
-
-    .image-container img {
-        width: 90%;
-        max-width: 400px;
-        height: auto;
-    }
-
-    .content {
-        padding: 20px;
-        font-size: 16px;
-    }
-}
-@media (max-width: 768px) {
-    .payment-options {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .qr-code {
-        width: 80%;
-        max-width: 300px;
-    }
-
-    .payment-button {
-        width: 90%;
-        padding: 12px;
-        font-size: 18px;
-    }
 }
