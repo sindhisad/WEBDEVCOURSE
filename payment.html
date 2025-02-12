@@ -33,6 +33,31 @@
     </section>
 
     <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const enrollmentInput = document.getElementById("enrollment-number");
+    const verifyBtn = document.getElementById("verify-btn");
+    const mainContent = document.getElementById("main-content");
+
+    verifyBtn.addEventListener("click", function () {
+        const enrollmentNumber = enrollmentInput.value.trim();
+
+        // Replace with actual verification logic
+        if (enrollmentNumber === "236310307182") { 
+            mainContent.style.display = "block";
+        } else {
+            alert("Invalid Enrollment Number");
+        }
+    });
+
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+});
+
         function showQR() {
             document.getElementById('qr-container').classList.toggle('show');
         }
