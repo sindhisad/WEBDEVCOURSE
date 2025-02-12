@@ -175,11 +175,12 @@ nav ul.active {
     text-align: center;
     position: relative;
     min-height: 100vh; /* Ensures full-screen height */
-    display: flex;
-    flex-direction: column;
+  isplay: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    text-align: center;
+    color: white;
+    padding: 20px;
 }
 
 #about::before {
