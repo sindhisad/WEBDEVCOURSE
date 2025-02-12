@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,61 +7,66 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <div id="content" class="mycontent">
 
-    <section class="payment-container">
-        <h2>Complete Your Payment</h2>
-        <p>Select your preferred payment method:</p>
+    <!-- Enrollment Verification Section -->
+    <div id="enrollment-section">
+        <h2>Enter Your Enrollment Number</h2>
+        <input type="text" id="enrollment-number" placeholder="Enter Enrollment Number">
+        <button id="verify-btn">Verify</button>
+    </div>
 
-        <div class="payment-options">
-            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn phonepe">Pay via PhonePe</a>
-            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn googlepay">Pay via Google Pay</a>
-            <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn paytm">Pay via Paytm</a>
-        </div>
+    <!-- Content Section (Initially Hidden) -->
+    <div id="content" class="mycontent" style="display: none;">
 
-        <p>Or scan the QR code below:</p>
-        <button onclick="showQR()" class="reveal-qr-btn">Click to Reveal QR Code</button>
+        <section class="payment-container">
+            <h2>Complete Your Payment</h2>
+            <p>Select your preferred payment method:</p>
 
-        <div id="qr-container" class="hidden">
-            <img src="WEBDEVTEACH_QR_Code (3) (2).png" alt="UPI QR Code" width="300" height="300">
-        </div>
+            <div class="payment-options">
+                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn phonepe">Pay via PhonePe</a>
+                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn googlepay">Pay via Google Pay</a>
+                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn paytm">Pay via Paytm</a>
+            </div>
 
-        <h3>Submit Your Transaction ID</h3>
-        <div id="ff-compose"></div>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0RSgkMg5cdUq3yP_6eu_1eUdxuskM76tJEhM83f7QyU9Miw/viewform?embedded=true" width="420" height="200"></iframe>
+            <p>Or scan the QR code below:</p>
+            <button onclick="showQR()" class="reveal-qr-btn">Click to Reveal QR Code</button>
 
-    </section>
+            <div id="qr-container" class="hidden">
+                <img src="WEBDEVTEACH_QR_Code (3) (2).png" alt="UPI QR Code" width="300" height="300">
+            </div>
+
+            <h3>Submit Your Transaction ID</h3>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0RSgkMg5cdUq3yP_6eu_1eUdxuskM76tJEhM83f7QyU9Miw/viewform?embedded=true" width="420" height="200"></iframe>
+
+        </section>
+    </div>
 
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
-    const enrollmentInput = document.getElementById("enrollment-number");
-    const verifyBtn = document.getElementById("verify-btn");
-    const mainContent = document.getElementById("main-content");
+        document.addEventListener("DOMContentLoaded", function () {
+            const enrollmentInput = document.getElementById("enrollment-number");
+            const verifyBtn = document.getElementById("verify-btn");
+            const enrollmentSection = document.getElementById("enrollment-section");
+            const content = document.getElementById("content");
 
-    verifyBtn.addEventListener("click", function () {
-        const enrollmentNumber = enrollmentInput.value.trim();
+            verifyBtn.addEventListener("click", function () {
+                const enrollmentNumber = enrollmentInput.value.trim();
 
-        // Replace with actual verification logic
-        if (enrollmentNumber === "236310307182") { 
-            mainContent.style.display = "block";
-        } else {
-            alert("Invalid Enrollment Number");
-        }
-    });
+                // List of valid enrollment numbers
+                const validEnrollmentNumbers = ["236310307182", "123456", "789012"]; // Add more if needed
 
-    // Hamburger Menu Toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+                if (validEnrollmentNumbers.includes(enrollmentNumber)) {
+                    content.style.display = "block"; // Show main content
+                    enrollmentSection.style.display = "none"; // Hide enrollment section
+                } else {
+                    alert("Invalid Enrollment Number. Please try again.");
+                }
+            });
 
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-});
-
-        function showQR() {
-            document.getElementById('qr-container').classList.toggle('show');
-        }
+            function showQR() {
+                document.getElementById('qr-container').classList.toggle('show');
+            }
+        });
     </script>
-     </div>
+
 </body>
 </html>
