@@ -12,33 +12,38 @@
     <div id="enrollment-section">
         <h2>Enter Your Enrollment Number</h2>
         <input type="text" id="enrollment-number" placeholder="Enter Enrollment Number">
-     <p>
         <button id="verify-btn">Verify</button>
     </div>
 
-    <!-- Content Section (Initially Hidden) -->
-    <div id="content" class="mycontent" style="display: none;">
+    <!-- Referral Code Section (Hidden Initially) -->
+    <div id="referral-section" style="display: none;">
+        <h2>Do You Have a Referral Code?</h2>
+        <input type="text" id="referral-code" placeholder="Enter Referral Code (Optional)">
+        <button id="apply-referral">Apply</button>
+    </div>
 
+    <!-- Payment Section (Hidden Initially) -->
+    <div id="content" class="mycontent" style="display: none;">
         <section class="payment-container">
             <h2>Complete Your Payment</h2>
-            <p>Select your preferred payment method:</p>
+            <p>Final Amount: <strong id="amount">₹1299</strong></p>
 
+            <p>Select your preferred payment method:</p>
             <div class="payment-options">
-                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn phonepe">Pay via PhonePe</a>
-                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn googlepay">Pay via Google Pay</a>
-                <a href="upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=999&cu=INR" class="pay-btn paytm">Pay via Paytm</a>
+                <a id="phonepe-link" href="#" class="pay-btn phonepe">Pay via PhonePe</a>
+                <a id="googlepay-link" href="#" class="pay-btn googlepay">Pay via Google Pay</a>
+                <a id="paytm-link" href="#" class="pay-btn paytm">Pay via Paytm</a>
             </div>
 
             <p>Or scan the QR code below:</p>
             <button onclick="showQR()" class="reveal-qr-btn">Click to Reveal QR Code</button>
 
             <div id="qr-container" class="hidden">
-                <img src="WEBDEVTEACH_QR_Code (3) (2).png" alt="UPI QR Code" width="300" height="300">
+                <img id="qr-image" src="" alt="UPI QR Code" width="300" height="300">
             </div>
 
             <h3>Submit Your Transaction ID</h3>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0RSgkMg5cdUq3yP_6eu_1eUdxuskM76tJEhM83f7QyU9Miw/viewform?embedded=true" width="420" height="200"></iframe>
-
         </section>
     </div>
 
@@ -46,27 +51,54 @@
         document.addEventListener("DOMContentLoaded", function () {
             const enrollmentInput = document.getElementById("enrollment-number");
             const verifyBtn = document.getElementById("verify-btn");
-            const enrollmentSection = document.getElementById("enrollment-section");
-            const content = document.getElementById("content");
+            const referralSection = document.getElementById("referral-section");
+            const referralInput = document.getElementById("referral-code");
+            const applyReferralBtn = document.getElementById("apply-referral");
+            const paymentContent = document.getElementById("content");
+            const paymentAmount = document.getElementById("amount");
+            const qrContainer = document.getElementById("qr-container");
+            const qrImage = document.getElementById("qr-image");
+
+            const phonepeLink = document.getElementById("phonepe-link");
+            const googlepayLink = document.getElementById("googlepay-link");
+            const paytmLink = document.getElementById("paytm-link");
+
+            let amount = 1299;
+            
+            const validEnrollmentNumbers = ["236310307182", "123456", "789012"]; // Add more if needed
+            const validReferralCodes = ["WEBDEV50"]; // List of valid referral codes
 
             verifyBtn.addEventListener("click", function () {
-                const enrollmentNumber = enrollmentInput.value.trim();
-
-                // List of valid enrollment numbers
-                const validEnrollmentNumbers = ["236310307182", "123456", "789012"]; // Add more if needed
-
-                if (validEnrollmentNumbers.includes(enrollmentNumber)) {
-                    content.style.display = "block"; // Show main content
-                    enrollmentSection.style.display = "none"; // Hide enrollment section
+                if (validEnrollmentNumbers.includes(enrollmentInput.value.trim())) {
+                    referralSection.style.display = "block";
                 } else {
                     alert("Invalid Enrollment Number. Please try again.");
                 }
             });
 
-            function showQR() {
-                document.getElementById('qr-container').classList.toggle('show');
-            }
+            applyReferralBtn.addEventListener("click", function () {
+                if (validReferralCodes.includes(referralInput.value.trim())) {
+                    amount = 999;
+                } else {
+                    amount = 1299;
+                }
+                paymentAmount.textContent = `₹${amount}`;
+                paymentContent.style.display = "block";
+
+                const upiLink = `upi://pay?pa=safikbhaisindhi@ibl&pn=SindhiSaad&am=${amount}&cu=INR`;
+                phonepeLink.href = upiLink;
+                googlepayLink.href = upiLink;
+                paytmLink.href = upiLink;
+
+                // Update QR Code dynamically
+                const qrUrl = `https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=${encodeURIComponent(upiLink)}`;
+                qrImage.src = qrUrl;
+            });
         });
+
+        function showQR() {
+            document.getElementById('qr-container').classList.toggle('show');
+        }
     </script>
 
 </body>
