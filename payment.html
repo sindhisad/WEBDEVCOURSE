@@ -49,6 +49,22 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+    function isDesktop() {
+        return window.innerWidth > 1024; // Detects if the screen width is large (Desktop)
+    }
+
+    if (isDesktop()) {
+        alert("⚠️ Access Denied: This page is for mobile users only!"); 
+        
+        // Optionally, redirect them away
+        window.location.href = "https://www.google.com"; // Change to a blocked page
+        
+        // Optional: Store IP & Block (Server-side required)
+        // fetch('https://yourserver.com/block-user', { method: 'POST', body: JSON.stringify({ ip: userIP }) });
+    }
+});
+
+        document.addEventListener("DOMContentLoaded", function () {
             const enrollmentInput = document.getElementById("enrollment-number");
             const verifyBtn = document.getElementById("verify-btn");
             const referralSection = document.getElementById("referral-section");
