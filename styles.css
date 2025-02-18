@@ -782,3 +782,153 @@ iframe {
         padding: 15px;
     }
 }
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Full-Screen Section Layout */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    width: 100vw; /* Full screen width */
+    padding: 20px;
+}
+
+/* Enrollment Verification Section */
+#enrollment-section {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Payment Container */
+.payment-container {
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    margin: auto;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.pay-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.phonepe { background-color: #673ab7; }
+.googlepay { background-color: #4285F4; }
+.paytm { background-color: #0033cc; }
+
+.pay-btn:hover {
+    transform: scale(1.05);
+}
+
+/* QR Code Section */
+.reveal-qr-btn {
+    background-color: #28a745;
+    margin: 15px 0;
+}
+
+#qr-container {
+    display: none;
+    margin-top: 20px;
+}
+
+#qr-container.show {
+    display: block;
+}
+
+#qr-container img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+/* iFrame Form */
+iframe {
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .payment-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pay-btn {
+        width: 100%;
+    }
+
+    .payment-container {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
